@@ -51,7 +51,7 @@ public class SinglyLinkedList {
     }
 
     void insertAt(int idx,int data){
-        if(idx>size&&idx<0){
+        if(idx>size||idx<0){
             System.out.println("enter index in range(0,"+size+") to insert element");
             return;
         }
@@ -142,13 +142,45 @@ public class SinglyLinkedList {
         return temp.data;
     }
     
+    void reverse(){
+        ListNode prev=null;
+        ListNode curr=head;
+        ListNode next=null;
+
+        while(curr!=null){
+            next=curr.next;
+            curr.next=prev;
+            prev=curr;
+            curr=next;
+        }
+        head=prev;
+    }
+
+    boolean isEmpty(){
+        return size==0;
+    }
+
+    boolean contains(int data){
+        for(ListNode temp=head;temp!=null;temp=temp.next){
+            if(temp.data==data)return true;
+        }
+        return false;
+    }
+
+    int indexOf(int data){
+        ListNode temp=head;
+        for(int i=0;i<size;i++){
+            if(temp.data==data)return i;
+            temp=temp.next;
+        }
+        return -1;
+    }
+
     void show(){
         ListNode temp=head;
-        if(temp!=null){
-            while(temp!=null){
-                System.out.print(temp.data+" -> ");
-                temp=temp.next;
-            }
+        while(temp!=null){
+            System.out.print(temp.data+" -> ");
+            temp=temp.next;
         }
         System.out.println("null");
     }
