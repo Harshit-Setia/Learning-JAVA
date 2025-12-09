@@ -1,5 +1,5 @@
-public class SinglyLinkedList {
-    public class ListNode {
+public class SinglyLinkedList implements LinkedList {
+    class ListNode {
         public int data;
         public ListNode next;
 
@@ -19,11 +19,11 @@ public class SinglyLinkedList {
         size=0;
     }
 
-    int getSize(){
+    public int getSize(){
         return size;
     }
 
-    void insertFirst(int data){
+    public void insertFirst(int data){
         ListNode newNode=new ListNode(data);
         if(head==null){
             head=newNode;
@@ -35,7 +35,7 @@ public class SinglyLinkedList {
         size++;
     }
 
-    void insertLast(int data){
+    public void insertLast(int data){
         ListNode newNode=new ListNode(data);
         if(head==null){
             head=newNode;
@@ -50,7 +50,7 @@ public class SinglyLinkedList {
         size++;
     }
 
-    void insertAt(int idx,int data){
+    public void insertAt(int idx,int data){
         if(idx>size||idx<0){
             System.out.println("enter index in range(0,"+size+") to insert element");
             return;
@@ -76,13 +76,13 @@ public class SinglyLinkedList {
         size++;
     }
 
-    void removeFirst(){
+    public void removeFirst(){
         if(size==0)return;
         head=head.next;
         size--;
     }
 
-    void removeLast(){
+    public void removeLast(){
         if(size==0)return;
         if(size==1){
             head=null;
@@ -97,7 +97,7 @@ public class SinglyLinkedList {
         size--;
     }
 
-    void removeAt(int idx){
+    public void removeAt(int idx){
         if(idx<size&&idx>=0){
             if(idx==0){
                 removeFirst();
@@ -124,7 +124,7 @@ public class SinglyLinkedList {
         }
     }
 
-    int get(int idx){
+    public int get(int idx){
         if(size==0){
             System.out.println("List is Empty");
             return -1;
@@ -142,7 +142,7 @@ public class SinglyLinkedList {
         return temp.data;
     }
     
-    void reverse(){
+    public void reverse(){
         ListNode prev=null;
         ListNode curr=head;
         ListNode next=null;
@@ -156,18 +156,18 @@ public class SinglyLinkedList {
         head=prev;
     }
 
-    boolean isEmpty(){
+    public boolean isEmpty(){
         return size==0;
     }
 
-    boolean contains(int data){
+    public boolean contains(int data){
         for(ListNode temp=head;temp!=null;temp=temp.next){
             if(temp.data==data)return true;
         }
         return false;
     }
 
-    int indexOf(int data){
+    public int indexOf(int data){
         ListNode temp=head;
         for(int i=0;i<size;i++){
             if(temp.data==data)return i;
@@ -176,7 +176,7 @@ public class SinglyLinkedList {
         return -1;
     }
 
-    void show(){
+    public void show(){
         ListNode temp=head;
         while(temp!=null){
             System.out.print(temp.data+" -> ");
