@@ -1,26 +1,57 @@
 public class Main {
     public static void main(String[] args) {
-        SinglyLinkedList ll=new SinglyLinkedList();
+
+        //SinglyLinkedList
+        LinkedList list1=new SinglyLinkedList();
         
-        ll.show();
-        ll.insertLast(40);
-        ll.insertAt(0, 20);
-        ll.insertFirst(10);
-        ll.insertAt(2, 30);
-        ll.insertAt(2, 25);
-        ll.removeFirst();
-        ll.removeLast();
-        ll.insertFirst(10);
-        ll.removeAt(1);
-        ll.insertAt(1, 20);
-        System.out.println(ll.get(0));
-        System.out.println(ll.get(1));
-        System.out.println(ll.get(2));
-        System.out.println(ll.getSize());
-        ll.show();
-        ll.reverse();
-        System.out.println(ll.contains(25));
-        System.out.println(ll.indexOf(25));
-        ll.show();
+        System.out.println("SinglyLinkedList");
+        // list1.show();
+        list1.insertLast(40);
+        list1.insertAt(0, 20);
+        list1.insertFirst(10);
+        list1.insertAt(2, 30);
+        list1.insertAt(2, 25);
+        list1.removeFirst();
+        list1.removeLast();
+        list1.insertFirst(10);
+        list1.removeAt(1);
+        list1.insertAt(1, 20);
+        // System.out.println(list1.get(0));
+        // System.out.println(list1.get(1));
+        // System.out.println(list1.get(2));
+        // System.out.println(list1.getSize());
+        // list1.show();
+        // list1.reverse();
+        // System.out.println(list1.contains(25));
+        // System.out.println(list1.indexOf(25));
+        list1.show();
+        
+        //DoublyLinkedList
+        LinkedList list2=new DoublyLinkedList();
+
+        System.out.println("DoublyLinkedList");
+        // list2.show();
+        list2.insertLast(40);
+        list2.insertAt(0, 20);
+        list2.insertFirst(10);
+        list2.insertAt(2, 30);
+        list2.insertAt(2, 25);
+        list2.removeFirst();
+        list2.removeLast();
+        list2.insertFirst(10);
+        list2.removeAt(1);
+        list2.insertAt(1, 20);
+        // System.out.println(list2.get(0));
+        // System.out.println(list2.get(1));
+        // System.out.println(list2.get(2));
+        // System.out.println(list2.getSize());
+        // list2.show();
+        // list2.reverse();
+        // System.out.println(list2.contains(25));
+        // System.out.println(list2.indexOf(25));
+        list2.show();
+
+        //CircularLinkedList
+        // pending
     } 
 }
